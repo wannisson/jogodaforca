@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+  <html lang="pt-br" ng-app="Forca">
+  <head>
+    <meta charset="utf-8">   
+    <title>Jogo da forca</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"/>  
+  </head>
+  <body background="img/fundo2.jpg" style="bgproperties: fixed; background-repeat: no-repeat;" >
+  <div class="container" ng-controller="jogo">
+        
+      <div class="row">          
+            
+        <button class="btn btn-primary" type="button">
+          TENTATIVAS RESTANTE : <span class="badge">{{restante}}</span>
+        </button>
+
+            <div class="col-xs-12" align="center" >
+
+              <div class="col-xs-12">
+            <img ng-Src="img/{{imagem}}"/>
+          </div>
+          
+              {{palavra}}
+
+            
+              </br>            
+              <span ng-repeat="letra in palavraSecreta track by $index" >
+                 
+
+                 <span style="font-size:100px; padding-left:5px; color-font:red" >{{letra}}</span>
+          
+            </span>
+            </div>         
+          <div class="col-xs-12"> 
+          
+
+            <form name="teclado" action="#">
+                    <input type="button"   class="bnt {{botaoA}}"  	value="A" ng-click="digitar('a')" /> 
+                    <input type="button"   class="bnt {{botaoB}}"  	value="b" ng-click="digitar('b')"/> 
+                    <input type="button"   class="bnt {{botaoC}}"	value="c" ng-click="digitar('c')"/> 
+                    <input type="button"   class="bnt {{botaoD}}"	value="d" ng-click="digitar('d')"/> 
+                    <input type="button"   class="bnt {{botaoE}}"	value="e" ng-click="digitar('e')"/> 
+                    <input type="button"   class="bnt {{botaoF}}"	value="f" ng-click="digitar('f')"/> 
+                    <input type="button"   class="bnt {{botaoG}}"	value="g" ng-click="digitar('g')"/> 
+                    <input type="button"   class="bnt {{botaoH}}"	value="h" ng-click="digitar('h')"/> 
+                    <input type="button"   class="bnt {{botaoI}}"	value="i" ng-click="digitar('i')"/> 
+                    <input type="button"   class="bnt {{botaoJ}}"	value="j" ng-click="digitar('j')"/> 
+                    <input type="button"   class="bnt {{botaoK}}"	value="k" ng-click="digitar('k')"/> 
+                    <input type="button"   class="bnt {{botaoL}}"	value="l" ng-click="digitar('l')"/> 
+                    <input type="button"   class="bnt {{botaoM}}"	value="m" ng-click="digitar('m')"/>       
+                    <input type="button"   class="bnt {{botaoN}}"	value="n" ng-click="digitar('n')"/> 
+                    <input type="button"   class="bnt {{botaoO}}"	value="o" ng-click="digitar('o')"/> 
+                    <input type="button"   class="bnt {{botaoP}}"	value="p" ng-click="digitar('p')"/>       
+                    <input type="button"   class="bnt {{botaoQ}}"	value="q" ng-click="digitar('q')"/> 
+                    <input type="button"   class="bnt {{botaoR}}"	value="r" ng-click="digitar('r')"/> 
+                    <input type="button"   class="bnt {{botaoS}}"	value="s" ng-click="digitar('s')"/>       
+                    <input type="button"   class="bnt {{botaoT}}"	value="t" ng-click="digitar('t')"/> 
+                    <input type="button"   class="bnt {{botao}}"	value="ç" ng-click="digitar('ç')"/>       
+                    <input type="button"   class="bnt {{botaoU}}"	value="u" ng-click="digitar('u')"/> 
+                    <input type="button"   class="bnt {{botaoV}}"	value="v" ng-click="digitar('v')"/> 
+                    <input type="button"   class="bnt {{botaoW}}"	value="w" ng-click="digitar('w')"/> 
+                    <input type="button"   class="bnt {{botaoX}}"	value="x" ng-click="digitar('x')"/>       
+                    <input type="button"   class="bnt {{botaoY}}"	value="y" ng-click="digitar('y')"/>       
+                    <input type="button"   class="bnt {{botaoZ}}"	value="z" ng-click="digitar('z')"/>       
+              </form>
+          </div>      
+      </div>      
+   </div>
+    <script src="js/angular.min.js"></script>    
+    <script src="js/controllers.js"></script>
+  </body>
+  </html>
+ <!-- <input type="text" ng-keyup="verificaletra(digitada)" ng-model="digitada"/> -->
