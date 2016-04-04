@@ -5,7 +5,7 @@ angular.module("Forca", []).controller("jogo", function($scope) {
 
   var palavraSortiada = [  
       
-    "java","cobol","pascal","JavaScript","Portugol"
+    "java","cobol","pascal","javascript","portugol"
   ];
 
 
@@ -55,20 +55,22 @@ $scope.digitar = function(letra) {
     
    for (i = 0; i < palavra.length; i++) {
 		
-      if (palavra[i] == letra) {
+      if (palavra[i] == letra && $scope.restante != 0) {
         $scope.palavraSecreta[i] = letra;
 		debugger;
 				
 		verifica = true;
+		bloqueiaBotao(letra);
 		
 	}	
 	
     }
-	if(verifica == false){
+	if(verifica == false && $scope.restante != 0){
 		chamaBoneco();
-		cont++;
+	
+			cont++;
+		
 		$scope.restante --;
-	}else{
 		bloqueiaBotao(letra);
 	}
 	
@@ -106,6 +108,8 @@ $scope.digitar = function(letra) {
   
   function bloqueiaBotao(letra){
 	  
+	  debugger;
+	  
 	  if(letra == "a" ){
 		  $scope.botaoA = "btn btn-danger disabled";
 		 
@@ -124,7 +128,7 @@ $scope.digitar = function(letra) {
 		  $scope.botaoD = "btn btn-danger disabled";
 		 
 	  }
-	  else if(letra == "e'"){
+	  else if(letra == "e"){
 		  $scope.botaoE = "btn btn-danger disabled";
 		 
 	  }
@@ -219,6 +223,12 @@ $scope.digitar = function(letra) {
 	  }
 	  else if(letra == "y"){
 		  $scope.botaoY = "btn btn-danger disabled";
+		 
+	  }
+	  
+	  else if(letra == "รง"){
+		  
+		  $scope.botao = "btn btn-danger disabled";
 		 
 	  }
 	  
